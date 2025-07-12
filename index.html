@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pergamino del Support Dorado</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      font-family: 'Georgia', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: radial-gradient(circle at top, #1e2a38 0%, #0a0a0a 100%);
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .scroll {
+      background: rgba(30, 42, 56, 0.95);
+      border: 5px solid #c8aa6e;
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 0 20px #c8aa6e;
+      color: #f0e6d2;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #c8aa6e;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    .heart {
+      font-size: 2.2rem;
+      color: #ff365e;
+      animation: pulse 1s infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    button {
+      background-color: #2f5eab;
+      color: #f0e6d2;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3e7ce7;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="scroll" id="scroll">
+      <h1>🎉 ¡Feliz cumpleaños, soporte celestial! 🛡️</h1>
+      <p id="mensaje">
+        Tú, que colocas visión en los rincones más oscuros de mi alma,
+        mereces un día lleno de luz, recompensas y escudos infinitos.
+        <br><br>
+        Eres el support de mis días grises, el que me cura cuando el mundo me pokea,
+        el que lanza peel a mis temores y hace roaming a mi corazón cuando más lo necesito.
+        <br><br>
+        Que tu vida se llene de asistencias divinas, de ADCs agradecidos (yo la primera), y de
+        momentos donde hasta los minions te celebren.
+        <br><br>
+        Hoy, en tu cumpleaños, alzo un pink ward en tu honor. Gracias por protegerme, por acompañarme, por amar como un verdadero main support.
+      </p>
+      <div class="heart">❤️</div>
+      <button onclick="cambiarMensaje()">✨ Otro hechizo support</button>
+    </div>
+
+    <audio id="clickSound" src="https://www.myinstants.com/media/sounds/magic.mp3"></audio>
+  </div>
+
+  <script>
+    const mensaje = document.getElementById("mensaje");
+    const sonido = document.getElementById("clickSound");
+
+    const mensajes = [
+      "Eres mi escudo favorito, mi curita diaria, mi línea de visión en los momentos oscuros. ¡Feliz cumpleaños, main del amor",
+      "Como buen support, haces que todos brillen, pero yo sé que tú eres la verdadera alma de cada partida. ¡Feliz cumple, protector mío!",
+      "Me diste peel emocional, visión estratégica, y un stun directo al corazón. ¿Cómo no amarte?",
+      "Ni Lulu con 40% de reducción de enfriamiento da tanto amor como tú. ¡Feliz level up, mi enchanter favorito!",
+      "Como Thresh, me agarraste con tu linterna cuando estaba perdida. Gracias por ser mi guía. ¡Feliz cumpleaños, mi supp leyendario!"
+
+    ];
+
+    function cambiarMensaje() {
+      const index = Math.floor(Math.random() * mensajes.length);
+      mensaje.innerHTML = mensajes[index];
+      sonido.play();
+    }
+  </script>
+</body>
+</html>
